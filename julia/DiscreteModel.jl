@@ -7,12 +7,11 @@
 
 struct Node; u::Vector{Float64}; f::Vector{Float64}; fix::Vector{Int}; end
 struct Elem; c::Array{Int,2}; k::Vector{Float64}; f::Vector{Float64}; end
-ModelType = Dict("mechanic"=>1., "hydraulic"=>-1.)
 
 function init(;connectivity, stiffness, displacement, force, fixnode, type="mechanic")
 	Node(Float64.(displacement), Float64.(force), Int.(fixnode)),
 	Elem(Int.(connectivity), Float64.(stiffness), zeros(length(stiffness))),
-	ModelType[type]
+	type ≢ "hydraulic" ? 1. : -1.
 end
 
 function run!(node, elem, α)

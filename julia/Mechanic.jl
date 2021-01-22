@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# mechanical julia script
+# mechanic julia script
 # based on mechanical example @ Ramos Jr. & Vieira [ICECE2000] 
 # 
 # ricardoaf@lccv.ufal.br (version 21/01/2021)
